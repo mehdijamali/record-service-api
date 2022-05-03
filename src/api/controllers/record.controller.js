@@ -14,7 +14,6 @@ exports.get = async (req, res) => {
       },
     },
   ];
-  //  console.log(req);
   // Filtering
   if (req?.body) {
     const {
