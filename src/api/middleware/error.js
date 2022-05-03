@@ -1,9 +1,9 @@
-const winston = require('winston');
 const { ValidationError } = require('express-validation');
+const logger = require('../../config/logger')(__filename.replace(`${__dirname}`, ''));
 
 module.exports = (err, req, res, next) => {
   next();
-  winston.error(err.message, err);
+  logger.error(err.message, err);
   if (err instanceof ValidationError) {
     return res
       .status(err.statusCode)
