@@ -1,11 +1,17 @@
 const express = require('express');
 const morgan = require('morgan');
+const compress = require('compression');
 
 const { ValidationError } = require('express-validation');
 
 const app = express();
+
 app.use(morgan('tiny'));
 
+// gzip compression
+app.use(compress());
+
+// handle validation errors
 app.use((err, req, res, next) => {
   next();
   if (err instanceof ValidationError) {
@@ -16,7 +22,7 @@ app.use((err, req, res, next) => {
 
   return res
     .status(500)
-    .json({ code: err.statusCode, msg: 'Internal Server Error' });
+    .json({ code: 500, msg: 'Internal Server Error' });
 });
 
 module.exports = app;
