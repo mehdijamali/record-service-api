@@ -1,6 +1,7 @@
 const express = require('express');
 const morgan = require('morgan');
 const compress = require('compression');
+const helmet = require('helmet');
 
 const { ValidationError } = require('express-validation');
 
@@ -10,6 +11,10 @@ app.use(morgan('tiny'));
 
 // gzip compression
 app.use(compress());
+
+// secure apps by setting various HTTP headers
+app.use(helmet());
+
 
 // handle validation errors
 app.use((err, req, res, next) => {
