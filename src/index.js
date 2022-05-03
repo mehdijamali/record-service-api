@@ -3,13 +3,14 @@ const { port } = require('./config/vars');
 const logger = require('./config/logger')(
   __filename.replace(`${__dirname}`, ''),
 );
+
 const mongoose = require('./config/mongoose');
 
 // open mongoose connection
 mongoose.connect();
 
 // Listen to the requests
-const server = app.listen(port, '0.0.0.0', () => logger.ino(`Server started on port ${port}`));
+const server = app.listen(port, '0.0.0.0', () => logger.info(`Server started on port ${port}`));
 process.on('unhandledRejection', (error) => {
   logger.error(error.message);
 });
