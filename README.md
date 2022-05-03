@@ -68,7 +68,7 @@ It return the following parameters:
 	   `docker run -d -p 8080:8080 --name record-service record-service`
 	 Then navigate to  [http://localhost:8080/api/v1/](http://localhost:8080/api/v1/) in your browser
   - You can run `npm install` command first, followed by `npm run start` and then navigate to  [http://localhost:8080/api/v1/](http://localhost:8080/api/v1/) in your browser
-  - 
+  
  ## Testing
 
 following testing frameworks is used for implementing and running integration test:
