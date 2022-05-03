@@ -1,4 +1,4 @@
-# Records Service API
+# Record Service API
 Records Service API is a RESTful API that returns information from a MongoDB database about some records.
 Some filtering options between two dates and for a specific period, as well as maximum and minimum count values, are available.
 
