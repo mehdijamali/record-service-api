@@ -1,7 +1,7 @@
 const Joi = require('joi');
 
 module.exports = {
-  // GET /v1/records
+  // POST /v1/records
   getRecords: {
     body: Joi.object().keys({
       startDate: Joi.date().iso(),
